@@ -1,0 +1,32 @@
+---
+title: "git_submission_cst040"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+install.packages("data.table")
+```
+
+
+
+```{r cars}
+library(data.table)
+```
+
+```{r}
+pop <-  lapply(excel_sheets("urbanpop.xlsx"), 
+               read_excel, 
+               path = "urbanpop.xlsx")
+```
+
+
+```{r pressure, echo=FALSE}
+str(pop)
+```
+
+
