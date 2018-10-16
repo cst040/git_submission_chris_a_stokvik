@@ -40,7 +40,7 @@ mean.Price <- samlet2%>%
 
 mean.Price$meanPrice <- as.data.frame(mean.Price$meanPrice - 753.28)
 
-# I use the cor function to check the correaltion between price and used capasity. 
+# I used the cor function to check the correaltion between price and used capasity. 
 
 cor(samlet2$`Pris per rom (kr)`, samlet2$`Kapasitetsutnytting av rom (prosent)`)
 
