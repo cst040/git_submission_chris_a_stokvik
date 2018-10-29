@@ -56,16 +56,10 @@ library(data.table)
 # Calculate the share of sales per product per year. 
 # The sum over the 3 shares per year is 100. Make a plot of the sales and shares per year per company.
   
-DT <- data.table(df)
-str(DT)
-setkey(DT, "Year")
-DT <- DT[, Share := Sales/sum(Sales), by=list(Year)]
+dt <- data.table(df)
+str(dt)
+setkey(dt, "Year")
+dt <- dt[, Share := Sales/sum(Sales), by=list(Year)]
 
-install.packages("latticeExtra")
-library(latticeExtra)
 
-asTheEconomist(
-xyplot(Sales +Share ~ Year, group=Product, data = DT, 
-       t="b", scales = list(relation="free", x=list(rot=45)),
-       auto.key=list(space = "top", column=3),
-       main="Product Information"))
+ggplot(Sales)
